@@ -4,3 +4,7 @@
 - TypeScript
 - React
 - Tailwind CSS
+
+## start
+- bun i
+- bun run dev
