@@ -15,7 +15,7 @@ export function RelatedTools({ exclude }: { exclude: string }) {
         04 · Related tools
       </p>
       <h2 className="mt-3 max-w-[30ch] text-2xl font-semibold tracking-tight text-balance">
-        The jsonlens toolkit.
+        The jsonglow toolkit.
       </h2>
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
         {items.map((tool) => (

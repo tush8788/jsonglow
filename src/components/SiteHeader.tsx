@@ -8,7 +8,7 @@ export function SiteHeader() {
           <span className="grid size-7 place-items-center rounded-md bg-accent/15 font-mono text-sm font-semibold text-accent ring-1 ring-accent/30">
             J
           </span>
-          <span className="font-mono text-sm font-medium tracking-tight">jsonlens</span>
+          <span className="font-mono text-sm font-medium tracking-tight">jsonglow</span>
           <span className="hidden font-mono text-[11px] text-muted sm:inline">
             / format · minify · validate
           </span>

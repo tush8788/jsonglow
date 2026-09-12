@@ -76,15 +76,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "jsonlens — JSON Formatter, Validator & Minifier" },
+      { title: "jsonglow — JSON Formatter, Validator & Minifier" },
       {
         name: "description",
         content:
           "Free online JSON formatter, validator, minifier and CSV converter that runs entirely in your browser.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "jsonlens" },
-      { property: "og:title", content: "jsonlens — JSON Formatter, Validator & Minifier" },
+      { property: "og:site_name", content: "jsonglow" },
+      { property: "og:title", content: "jsonglow — JSON Formatter, Validator & Minifier" },
       {
         property: "og:description",
         content:

@@ -4,13 +4,13 @@ import { JsonWorkbench } from "@/components/JsonWorkbench";
 import { Faq, FeatureGrid, Prose } from "@/components/ContentSections";
 import { RelatedTools } from "@/components/RelatedTools";
 
-const TITLE = "JSON Formatter Online — Format, Validate & Beautify JSON";
+const TITLE = "JSON Formatter Online — Format, Validate & Beautify JSON | JSONGlow";
 const DESC =
-  "Free online JSON formatter and validator. Paste JSON to beautify, minify, sort keys or view as a tree. Runs entirely in your browser — nothing is uploaded.";
+  "Free privacy-first JSON formatter, validator, minifier and JSON-to-CSV converter. Format and inspect JSON instantly in your browser—your data never leaves your device.";
 
 const FAQ = [
   {
-    q: "Does jsonlens send my data anywhere?",
+    q: "Does jsonglow send my data anywhere?",
     a: "No. Parsing happens entirely client-side. Nothing is transmitted, logged, or stored on a server.",
   },
   {
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
           "@graph": [
             {
               "@type": "WebApplication",
-              name: "jsonlens JSON Formatter",
+              name: "jsonglow JSON Formatter",
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Any",
               description: DESC,
@@ -82,7 +82,7 @@ function Home() {
         title="A lightweight, human-readable data format."
         paragraphs={[
           "JSON (JavaScript Object Notation) is the lingua franca of APIs and configuration. It encodes objects, arrays, strings, numbers, booleans and null using a syntax most developers can read at a glance.",
-          "jsonlens parses your payload, enforces the grammar, and re-emits it with consistent indentation so nested keys line up like labels on a patch panel. Validation surfaces the exact line and column where a parse would fail — no guesswork.",
+          "jsonglow parses your payload, enforces the grammar, and re-emits it with consistent indentation so nested keys line up like labels on a patch panel. Validation surfaces the exact line and column where a parse would fail — no guesswork.",
         ]}
       />
       <FeatureGrid

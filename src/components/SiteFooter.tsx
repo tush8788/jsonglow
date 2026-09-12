@@ -6,10 +6,10 @@ export function SiteFooter() {
           <span className="grid size-6 place-items-center rounded-md bg-accent/15 font-mono text-xs font-semibold text-accent">
             J
           </span>
-          <span className="font-mono text-sm">jsonlens</span>
+          <span className="font-mono text-sm">jsonglow</span>
         </div>
         <p className="font-mono text-[12px] text-muted">
-          Built for engineers. Runs in your browser. © 2026 jsonlens.
+          Built for engineers. Runs in your browser. © 2026 jsonglow.
         </p>
       </div>
     </footer>

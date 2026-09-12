@@ -19,7 +19,7 @@ const FAQ = [
   },
   {
     q: "Can I validate against a schema?",
-    a: "Not yet — jsonlens validates syntax, not JSON Schema rules. Structural validation is on the roadmap.",
+    a: "Not yet — jsonglow validates syntax, not JSON Schema rules. Structural validation is on the roadmap.",
   },
 ];
 
@@ -65,7 +65,7 @@ function ValidatorPage() {
         eyebrow="01 · How validation works"
         title="Strict grammar, precise error location."
         paragraphs={[
-          "A JSON validator does one job well: decide whether a string parses, and if not, say exactly where it broke. jsonlens reports the first offending token with its line and column so you can jump straight to it in your editor.",
+          "A JSON validator does one job well: decide whether a string parses, and if not, say exactly where it broke. jsonglow reports the first offending token with its line and column so you can jump straight to it in your editor.",
           "Common failures are trailing commas, single quotes around keys or strings, unescaped newlines inside strings, and stray comments copied from a config file. Each of these fails the specification even though many languages accept them.",
         ]}
       />
