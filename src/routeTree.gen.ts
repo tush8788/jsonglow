@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as JsonFormatterRouteImport } from './routes/json-formatter'
 import { Route as JsonMinifierRouteImport } from './routes/json-minifier'
 import { Route as JsonToCsvRouteImport } from './routes/json-to-csv'
 import { Route as JsonValidatorRouteImport } from './routes/json-validator'
@@ -17,6 +18,11 @@ import { Route as JsonValidatorRouteImport } from './routes/json-validator'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JsonFormatterRoute = JsonFormatterRouteImport.update({
+  id: '/json-formatter',
+  path: '/json-formatter',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JsonMinifierRoute = JsonMinifierRouteImport.update({
@@ -37,12 +43,14 @@ const JsonValidatorRoute = JsonValidatorRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
@@ -50,20 +58,38 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/json-minifier' | '/json-to-csv' | '/json-validator'
+  fullPaths:
+    | '/'
+    | '/json-formatter'
+    | '/json-minifier'
+    | '/json-to-csv'
+    | '/json-validator'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/json-minifier' | '/json-to-csv' | '/json-validator'
-  id: '__root__' | '/' | '/json-minifier' | '/json-to-csv' | '/json-validator'
+  to:
+    | '/'
+    | '/json-formatter'
+    | '/json-minifier'
+    | '/json-to-csv'
+    | '/json-validator'
+  id:
+    | '__root__'
+    | '/'
+    | '/json-formatter'
+    | '/json-minifier'
+    | '/json-to-csv'
+    | '/json-validator'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  JsonFormatterRoute: typeof JsonFormatterRoute
   JsonMinifierRoute: typeof JsonMinifierRoute
   JsonToCsvRoute: typeof JsonToCsvRoute
   JsonValidatorRoute: typeof JsonValidatorRoute
@@ -76,6 +102,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/json-formatter': {
+      id: '/json-formatter'
+      path: '/json-formatter'
+      fullPath: '/json-formatter'
+      preLoaderRoute: typeof JsonFormatterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/json-minifier': {
@@ -104,6 +137,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  JsonFormatterRoute: JsonFormatterRoute,
   JsonMinifierRoute: JsonMinifierRoute,
   JsonToCsvRoute: JsonToCsvRoute,
   JsonValidatorRoute: JsonValidatorRoute,
