@@ -272,7 +272,7 @@ function PrivacyPolicyPage() {
           with a data-protection authority.
         </P>
         <P>
-          To make a request, contact [your privacy email] and include the request type and the information
+          To make a request, contact tushar.jagtap8788@gmail.com and include the request type and the information
           needed to identify the relevant interaction. We may need to verify your identity before
           responding. We will not ask you to send us your JSON payload to verify a request.
         </P>

@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as JsonFormatterRouteImport } from './routes/json-formatter'
 import { Route as JsonMinifierRouteImport } from './routes/json-minifier'
 import { Route as JsonToCsvRouteImport } from './routes/json-to-csv'
@@ -19,6 +20,11 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiePolicyRoute = CookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JsonFormatterRoute = JsonFormatterRouteImport.update({
@@ -49,6 +55,7 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cookie-policy': typeof CookiePolicyRoute
   '/json-formatter': typeof JsonFormatterRoute
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/cookie-policy'
     | '/json-formatter'
     | '/json-minifier'
     | '/json-to-csv'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/cookie-policy'
     | '/json-formatter'
     | '/json-minifier'
     | '/json-to-csv'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/cookie-policy'
     | '/json-formatter'
     | '/json-minifier'
     | '/json-to-csv'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CookiePolicyRoute: typeof CookiePolicyRoute
   JsonFormatterRoute: typeof JsonFormatterRoute
   JsonMinifierRoute: typeof JsonMinifierRoute
   JsonToCsvRoute: typeof JsonToCsvRoute
@@ -115,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie-policy': {
+      id: '/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/cookie-policy'
+      preLoaderRoute: typeof CookiePolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/json-formatter': {
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CookiePolicyRoute: CookiePolicyRoute,
   JsonFormatterRoute: JsonFormatterRoute,
   JsonMinifierRoute: JsonMinifierRoute,
   JsonToCsvRoute: JsonToCsvRoute,

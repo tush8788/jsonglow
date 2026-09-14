@@ -35,6 +35,12 @@ export function SiteFooter() {
           >
             Privacy Policy
           </Link>
+          <Link
+            to="/cookie-policy"
+            className="font-mono text-[12px] text-muted transition-colors hover:text-foreground"
+          >
+            Cookie Policy
+          </Link>
           <p className="font-mono text-[12px] text-muted">
             Built for engineers. Runs in your browser. © 2026 jsonglow.
           </p>
