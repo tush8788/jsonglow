@@ -42,12 +42,12 @@ function PrivacyPolicyPage() {
       <article className="mx-auto max-w-3xl py-16 sm:py-20">
         <p className="font-mono text-[11px] tracking-[0.2em] text-accent uppercase">Legal</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight text-balance">
-          Privacy Policy for jsonglow
+          Privacy Policy for JSONGlow
         </h1>
         <p className="mt-3 font-mono text-[12px] text-muted">Last updated: September 14, 2026</p>
 
         <P>
-          jsonglow (“jsonglow,” “we,” “us,” or “our”) operates https://jsonglow.com and
+          JSONGlow (“JSONGlow,” “we,” “us,” or “our”) operates https://jsonglow.com and
           related pages and tools (the “Service”). This Privacy Policy explains what information we
           collect, how we use it, and the choices available to visitors.
         </P>
@@ -220,7 +220,7 @@ function PrivacyPolicyPage() {
             </thead>
             <tbody className="divide-y divide-border text-muted">
               <tr>
-                <td className="px-4 py-3">Vecel / hosting partner</td>
+                <td className="px-4 py-3">Vercel / hosting partner</td>
                 <td className="px-4 py-3">Hosting, delivery, and security</td>
                 <td className="px-4 py-3">Request and technical data needed to deliver the site</td>
               </tr>
@@ -229,7 +229,7 @@ function PrivacyPolicyPage() {
                 <td className="px-4 py-3">Consent-based analytics</td>
                 <td className="px-4 py-3">Website usage and device information, not JSON payloads</td>
               </tr>
-              <tr>
+              {/* <tr>
                 <td className="px-4 py-3">[Support provider, if any]</td>
                 <td className="px-4 py-3">Responding to messages</td>
                 <td className="px-4 py-3">Information you send in a support request</td>
@@ -238,7 +238,7 @@ function PrivacyPolicyPage() {
                 <td className="px-4 py-3">[Advertising provider, if enabled]</td>
                 <td className="px-4 py-3">Advertising</td>
                 <td className="px-4 py-3">Information described in the updated Policy and consent notice</td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>
@@ -324,7 +324,7 @@ function PrivacyPolicyPage() {
           <br />
           Email: tushar.jagtap8788@gmail.com
           <br />
-          Address: MH India
+          Address: Maharashtra, India
         </p>
       </article>
     </PageShell>
