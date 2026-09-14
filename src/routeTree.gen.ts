@@ -14,6 +14,7 @@ import { Route as JsonFormatterRouteImport } from './routes/json-formatter'
 import { Route as JsonMinifierRouteImport } from './routes/json-minifier'
 import { Route as JsonToCsvRouteImport } from './routes/json-to-csv'
 import { Route as JsonValidatorRouteImport } from './routes/json-validator'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,11 @@ const JsonValidatorRoute = JsonValidatorRouteImport.update({
   path: '/json-validator',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,6 +70,7 @@ export interface FileRoutesById {
   '/json-minifier': typeof JsonMinifierRoute
   '/json-to-csv': typeof JsonToCsvRoute
   '/json-validator': typeof JsonValidatorRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -71,6 +80,7 @@ export interface FileRouteTypes {
     | '/json-minifier'
     | '/json-to-csv'
     | '/json-validator'
+    | '/privacy-policy'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -78,6 +88,7 @@ export interface FileRouteTypes {
     | '/json-minifier'
     | '/json-to-csv'
     | '/json-validator'
+    | '/privacy-policy'
   id:
     | '__root__'
     | '/'
@@ -85,6 +96,7 @@ export interface FileRouteTypes {
     | '/json-minifier'
     | '/json-to-csv'
     | '/json-validator'
+    | '/privacy-policy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -93,6 +105,7 @@ export interface RootRouteChildren {
   JsonMinifierRoute: typeof JsonMinifierRoute
   JsonToCsvRoute: typeof JsonToCsvRoute
   JsonValidatorRoute: typeof JsonValidatorRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -132,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JsonValidatorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -141,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   JsonMinifierRoute: JsonMinifierRoute,
   JsonToCsvRoute: JsonToCsvRoute,
   JsonValidatorRoute: JsonValidatorRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
